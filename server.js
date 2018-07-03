@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 3000;
 app.use(express.static('public'));
 
 app.use(function(req,res,next){
-	if(req.header['x-fowarded-proto'] === 'http'){
+	if(req.header['x-fowarded-proto'] === 'https'){
 		next();
 	}else{
 		res.redirect('http://'+req.hostname+req.url);
