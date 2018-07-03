@@ -9,6 +9,7 @@ app.use(express.static('public'));
 
 app.use(function(req,res,next){
 	if(req.header['x-fowarded-proto'] === 'https'){
+		console.log("Heroku Server");
 		res.redirect('http://'+req.hostname+req.url);
 	}else{
 		next();
