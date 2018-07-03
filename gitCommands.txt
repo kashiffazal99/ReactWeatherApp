@@ -1,0 +1,39 @@
+GitHub
+-------
+git init
+  -(create .git hidden file)
+git status
+  - (show untrack files)
+[.gitignor (file to ignore folder from tracking)]
+git add .(file name) Or git add . (simple dot for all files to be committed)
+ - (track file or to be committed)
+git commit -m 'Initial Commit'
+ -(Commit message for track files)
+ git commit -a -m 'Update copy'
+  -('-a' means edit commit)
+git remote add origin https://github.com/kashiffazal99/ReactWeather.git
+  -(Set repository with URL and it could be change but always with extension "".git")
+git remote -v
+  -(Get remote repository)
+git branch
+  -(Get branch)
+git push -u origin master
+  -(Push all committed files at Git Repository)
+
+
+
+
+
+SSH Key (GitBash)
+--------
+ls -al ~/.ssh
+  -(find the ssh key from local ma chine [git bash for window users])
+ssh-keygen -t rsa -b 4096 -C 'gitHubEmail'
+  -(This will generate ssh key in your local machine)
+eval "$(ssh-agent -s)"
+  -(this will find the ssh agent key from your machine)
+ssh-add ~/.ssh/id_rsa
+  -(This will add agent id in to your 'id_rsa' privet file)
+less ~/.ssh/id_rsa.pub
+  - (Show ssh key)
+ssh -T git@github.com

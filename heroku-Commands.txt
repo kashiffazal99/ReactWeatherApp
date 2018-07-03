@@ -1,0 +1,8 @@
+heroku
+heroku login
+  -(This will login our account)
+heroku create
+  -(This give us custom URL and also add new remote to our git repository)
+  -(We can see this by "git remote -v")
+git push heroku master
+  -(This will push our code at heroku)
