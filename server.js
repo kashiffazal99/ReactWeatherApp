@@ -9,9 +9,9 @@ app.use(express.static('public'));
 
 app.use(function(req,res,next){
 	if(req.header['x-fowarded-proto'] === 'https'){
-		next();
-	}else{
 		res.redirect('http://'+req.hostname+req.url);
+	}else{
+		next();
 	}
 });
 
