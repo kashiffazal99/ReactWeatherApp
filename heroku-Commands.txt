@@ -6,3 +6,5 @@ heroku create
   -(We can see this by "git remote -v")
 git push heroku master
   -(This will push our code at heroku)
+heroku open
+  -(Open project in default browser)

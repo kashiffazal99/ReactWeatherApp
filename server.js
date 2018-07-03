@@ -4,9 +4,10 @@ var app = express();
 //Set port for server or local
 const PORT = process.env.PORT || 3000;
 
+
+app.use(express.static('public'));
+
 app.use(function(req,res,next){
-	console.log(req.header['x-fowarded-proto']);
-	console.log('http://'+req.hostname+req.url);
 	if(req.header['x-fowarded-proto'] === 'http'){
 		next();
 	}else{
@@ -14,7 +15,7 @@ app.use(function(req,res,next){
 	}
 });
 
-app.use(express.static('public'));
+
 
 app.listen(PORT, function(){
 	console.log('Express Server started at port ' + PORT);
